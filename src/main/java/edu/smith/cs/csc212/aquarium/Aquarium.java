@@ -46,8 +46,11 @@ public class Aquarium extends GFX {
 	//the red fish x-component
 	int fish3x = -100;
 	
-	Fish nemo = new Fish(250, 250, Color.MAGENTA);
-	Fish marlin = new Fish(100, 100, Color.ORANGE);
+	Fish nemo = new Fish(250, 250, Color.MAGENTA, true, false);
+	Fish marlin = new Fish(100, 100, Color.ORANGE, false, false);
+	
+		
+	
 			
 
 	@Override
@@ -56,7 +59,8 @@ public class Aquarium extends GFX {
 		g.setColor(Color.blue);
 		g.fillRect(0, 0, getWidth(), getHeight());
 		
-		DrawFish.smallFacingLeft(g, nemo.color, nemo.x, nemo.y);
+		nemo.draw(g); 
+		marlin.draw(g); 
 
 		// Draw the fish!
 		DrawFish.facingLeft(g, Color.yellow, fish1X, 200);
